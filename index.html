@@ -14,9 +14,11 @@
   <div id="app">
     <h1>get ready for some {{test}}</h1>
     <img :src="confucius" id="confucius" />
-    <!-- Create search bar below -->
     <input v-on:input="dealWithInput"></input>
     <button class="submit-button" @:click="dealWithClick">Get me a Haiku</button>
+    <div class="haiku-box">
+      <p v-show="ourHaiku !== ''"> {{ourHaiku}}  </p>
+    </div>
   </div>
 
   <script src="main.js"></script>

@@ -1,9 +1,17 @@
+const haikus = [
+    "haikuone",
+    "haikutwo",
+    "haikuthree"
+]
+
 const app = Vue.createApp({
     data() {
         return {
             test: "Haiku",
             confucius: "./assets/images/confuciusnightbar.png",
-            searchInput: "Hello World"
+            searchInput: "Hello World",
+            ourHaiku: "",
+            haikuCounter: 0
         }
     },
     methods: {
@@ -12,7 +20,8 @@ const app = Vue.createApp({
             console.log(this.searchInput)
         },
         dealWithClick(){
-            console.log("I was clicked!")
+            const ranNumber = Math.floor(Math.random()*3)
+            this.ourHaiku = haikus[ranNumber];
         }
     },
 })

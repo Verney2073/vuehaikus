@@ -4,8 +4,16 @@
 }
 
 #confucius {
-    width: 500px;
+    width: 350px;
     perspective: 1000px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     display: block;
+}
+
+.haiku-box {
+    perspective: 1000px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border: 1px solid black;
+    width: 150px;
+    height: 150px;
 }
