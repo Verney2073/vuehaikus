@@ -1,0 +1,10 @@
+* {
+    margin: 12 auto; 
+    text-align: center;
+}
+
+#confucius {
+    width: 500px;
+    perspective: 1000px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3)
+}
