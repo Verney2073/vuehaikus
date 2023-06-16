@@ -40,7 +40,7 @@ app.component('main-search-bar', {
   },
   template:
     `<div> 
-    <input v-on:input="searchBarInput"></input>
+    <input v-model="searchInput"></input>
     <button class="submit-button" @:click="dealWithSearchClick">Search Haiku</button>
     <button class="submit-button" @:click="dealWithClick">Get me a Random Haiku</button>
     </div>`,
@@ -54,10 +54,11 @@ app.component('main-search-bar', {
     }
   },
   methods: {
-    searchBarInput(event) {
-      this.searchInput = event.target.value;
-      console.log(this.searchInput)
-    },
+    // This can now be removed as we use v-model to bind the input field to the property rather than a function
+    // searchBarInput(event) {
+    //   this.searchInput = event.target.value;
+    //   console.log(this.searchInput)
+    // },
     dealWithClick() {
       const ranNumber = Math.floor(Math.random() * 3)
       this.ourHaiku = haikus[ranNumber];

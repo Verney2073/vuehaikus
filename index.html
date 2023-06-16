@@ -11,11 +11,17 @@
 </head>
 
 <body>
-  <div id="app">
+  <div id="app" v-cloak>
     <h1>get ready for some {{test}}</h1>
     <img :src="confucius" id="confucius" />
     <main-search-bar @deal-with-search-click="dealWithSearchClick"></main-search-bar>
-    <haiku-render-box :haikuBody="mainHaiku"></haiku-render-box>
+    <div class="haiku-box"> 
+      <p v-show="mainHaiku !== ''"> {{mainHaiku}}  </p> 
+      </div>
+    <!--
+      Something's not working with passing the props into this comp 
+      <haiku-render-box v-show="mainHaiku !== ' '" :haikuBody="mainHaiku"></haiku-render-box> 
+    --> 
   </div>
   <!-- 
     Trying to get module import/exports to work ... 

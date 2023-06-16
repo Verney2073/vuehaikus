@@ -6,7 +6,7 @@ app.component('haiku-render-box', {
         },
         template: 
         `<div class="haiku-box"> 
-          <p v-show="haikuBody !== ''"> {{haikuBody}}  </p> 
+          <p > {{haikuBody}}  </p> 
           </div>`, 
           data() {
             return {
