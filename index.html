@@ -14,18 +14,13 @@
   <div id="app">
     <h1>get ready for some {{test}}</h1>
     <img :src="confucius" id="confucius" />
-    <input v-on:input="dealWithInput"></input>
-    <button class="submit-button" @:click="dealWithSearchClick">Search Haiku</button>
-    <button class="submit-button" @:click="dealWithClick">Get me a Random Haiku</button>
-    <div class="haiku-box">
-      <p v-show="ourHaiku !== ''"> {{ourHaiku}}  </p>
-    </div>
+    <main-search-bar @deal-with-search-click="dealWithSearchClick"></main-search-bar>
+    <haiku-render-box :haikuBody="mainHaiku"></haiku-render-box>
   </div>
   <!-- 
     Trying to get module import/exports to work ... 
     <script type="module">
     import { createApp, ref } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
-  
     createApp({
       setup() {
         const message = ref('Hello Vue!')
@@ -36,9 +31,11 @@
     })
   </script>
   -->
-    <script src="main.js"></script> 
+  <script src="main.js"></script>
+  <script src="./components/mainSearchBar.js"></script>
+  <script src="./components/haikuRenderBox.js"></script>
 
-  <script >const mountedApp = app.mount("#app")</script>
+  <script>const mountedApp = app.mount("#app")</script>
 </body>
 
 </html>
