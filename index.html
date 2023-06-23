@@ -13,7 +13,7 @@
 <body>
   <div id="app" v-cloak>
     <h1>get ready for some {{test}}</h1>
-    <img :src="confucius" id="confucius" />
+    <img :src="confucius" id="confucius" :style="imageStyle" />
     <main-search-bar @deal-with-search-click="dealWithSearchClick"
       @deal-with-random-click="dealWithRandomClick"></main-search-bar>
     <div class="haiku-box">
@@ -23,6 +23,7 @@
       Something's not working with passing the props into this comp 
       <haiku-render-box v-show="mainHaiku !== ' '" :haikuBody="mainHaiku"></haiku-render-box> 
     -->
+    <div> {{localTime}} </div>
   </div>
   <!-- 
     Trying to get module import/exports to work ... 
