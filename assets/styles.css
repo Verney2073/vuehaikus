@@ -22,3 +22,7 @@
     height: 150px;
 }
 
+.poem-styling {
+    white-space: pre-line;
+    text-align: center;
+}

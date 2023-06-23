@@ -54,27 +54,23 @@ app.component('main-search-bar', {
     }
   },
   methods: {
-    // This can now be removed as we use v-model to bind the input field to the property rather than a function
-    // searchBarInput(event) {
-    //   this.searchInput = event.target.value;
-    //   console.log(this.searchInput)
-    // },
     dealWithClick() {
-      const ranNumber = Math.floor(Math.random() * 3)
-      this.ourHaiku = haikus[ranNumber];
+      const ranNumber = Math.floor(Math.random() * haikuObject.length)
+      this.ourHaiku = haikuObject[ranNumber];
+      this.$emit('deal-with-random-click', { randomHaiku: this.ourHaiku.body })
     },
     dealWithSearchClick() {
-      if(this.searchInput !== ""){
-      ourSearch = this.searchInput.toLowerCase();
-      for (let i = 0; i < haikuObject.length; i++) {
-        lowerCaseHaiku = haikuObject[i].body.toLowerCase()
-        if (lowerCaseHaiku.includes(ourSearch)) {
-          this.ourHaiku = haikuObject[i].body
-          this.$emit('deal-with-search-click',{ haikuBody: this.ourHaiku })
-          break;
+      if (this.searchInput !== "") {
+        ourSearch = this.searchInput.toLowerCase();
+        for (let i = 0; i < haikuObject.length; i++) {
+          lowerCaseHaiku = haikuObject[i].body.toLowerCase()
+          if (lowerCaseHaiku.includes(ourSearch)) {
+            this.ourHaiku = haikuObject[i].body
+            this.$emit('deal-with-search-click', { haikuBody: this.ourHaiku })
+            break;
+          }
         }
-      }
-    };
-  }
+      };
+    }
   },
 }) 

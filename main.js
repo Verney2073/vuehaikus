@@ -15,13 +15,11 @@ const app = Vue.createApp({
                 this.searchInput = event.target.value;
                 console.log(this.searchInput)
         },
-        dealWithRandomClick() {
-            const ranNumber = Math.floor(Math.random() * 3)
-            this.mainHaiku = haikus[ranNumber];
+        dealWithRandomClick(payload) {
+            this.mainHaiku = payload.randomHaiku;
         },
         dealWithSearchClick(payload) {
-            this.mainHaiku = payload.haikuBody 
-            console.log(this.mainHaiku)
+            this.mainHaiku = payload.haikuBody;
         }
     },
 })
