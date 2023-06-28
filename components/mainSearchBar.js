@@ -40,7 +40,7 @@ app.component('main-search-bar', {
   },
   template:
     `<div> 
-    <input v-model="searchInput"></input>
+    <input v-model="searchInput" />
     <button class="submit-button" @:click="dealWithSearchClick">Search Haiku</button>
     <button class="submit-button" @:click="dealWithClick">Get me a Random Haiku</button>
     </div>`,

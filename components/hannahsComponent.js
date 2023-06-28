@@ -1,14 +1,16 @@
 app.component("hannahs-component", {
-  template: `<div id=hannahsDiv>  <ul id=hannahsHaikuList>
+  template: `<div id=hannahsDiv>  
+  <ul id=hannahsHaikuList>
         <li v-for="haiku in haikus" :key="haiku.id" >
           <h2 >{{ haiku.name }}</h2>
 
             <p> {{ haiku.content }}</p>
-                      <button @click="likeHaiku(haiku.id)" :style="{borderColor: haiku.haikuLiked ? 'red' : 'blue'}">
+            <button @click="likeHaiku(haiku.id)" :style="{borderColor: haiku.haikuLiked ? 'red' : 'blue'}">
             {{haiku.haikuLiked ? 'Dislike' : 'Like'}}
           </button>
         </li>
-      </ul> <div>`,
+      </ul> 
+      </div>`,
 
   data() {
     return {
