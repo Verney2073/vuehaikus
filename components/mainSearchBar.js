@@ -58,6 +58,7 @@ app.component('main-search-bar', {
       const ranNumber = Math.floor(Math.random() * haikuObject.length)
       this.ourHaiku = haikuObject[ranNumber];
       this.$emit('deal-with-random-click', { randomHaiku: this.ourHaiku.body })
+      this.searchInput = "";
     },
     dealWithSearchClick() {
       if (this.searchInput !== "") {
