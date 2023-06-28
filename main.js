@@ -10,7 +10,6 @@ const app = Vue.createApp({
             confuciusBorderIndex: 0,
             mainHaiku: "",
             searchInput: "",
-            localTime: ""
         }
     },
     methods: {
