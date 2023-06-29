@@ -16,10 +16,17 @@
         @deal-with-search-click="dealWithSearchClick"
         @deal-with-random-click="dealWithRandomClick"
       ></main-search-bar>
-      <haiku-render-box :haiku-body="mainHaiku" ></haiku-render-box> 
-      <hannahs-component></hannahs-component>
+      <div>
+        <input-haiku @new-haiku-added="addHaiku"></input-haiku>
+      </div>
+      <div id=haikuList>
+        <ul id=hannahsHaikuList>
+          <li v-for="haiku in haikus" :key="haiku.id" id="hannahsLi">
+            <display-haiku :haiku-id="haiku.id" :haiku-name="haiku.name" :haiku-content="haiku.content"></display-haiku>
+          </li>
+        </ul>
     </div>
-    
+  </div>
     <!-- 
     Trying to get module import/exports to work ... 
     <script type="module">
@@ -37,7 +44,8 @@
     <script src="main.js"></script>
     <script src="./components/mainSearchBar.js"></script>
     <script src="./components/haikuRenderBox.js"></script>
-    <script src="./components/hannahsComponent.js"></script>
+    <script src="./components/displayHaiku.js"></script>
+    <script src="./components/inputHaiku.js"></script>
 
     <script>
       const mountedApp = app.mount("#app");
